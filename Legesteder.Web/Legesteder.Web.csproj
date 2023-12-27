@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+      <Content Update="Styles\input.css">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <None Remove="Data\export.geojson" />
+      <Content Include="Data\export.geojson">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\lib\foundation\css\app.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\foundation\css\foundation.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\foundation\css\foundation.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\foundation\index.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\foundation\js\app.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\foundation\js\vendor\foundation.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\foundation\js\vendor\foundation.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\foundation\js\vendor\jquery.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\foundation\js\vendor\what-input.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\ol-layerswitcher\brewery-20231204T104641Z-001.zip" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\ol-layerswitcher\ol-layerswitcher.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\ol-layerswitcher\ol-layerswitcher.d.ts" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\ol-layerswitcher\ol-layerswitcher.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\proj4\proj4-src.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\proj4\proj4.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="GeoJSON.Text" Version="1.0.2" />
+      <PackageReference Include="Tailwind.Extensions.AspNetCore" Version="1.0.0" />
+    </ItemGroup>
+
+<!--    <ItemGroup>-->
+<!--        <UpToDateCheckBuilt Include="Styles/source.css" Set="Css" />-->
+<!--        <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />-->
+<!--    </ItemGroup>-->
+
+<!--    <Target Name="Tailwind" BeforeTargets="Build">-->
+<!--        <Exec Command="npm run css:build"/>-->
+<!--    </Target>-->
+
+</Project>
