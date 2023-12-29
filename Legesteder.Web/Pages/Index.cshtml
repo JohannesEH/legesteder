@@ -7,12 +7,12 @@
 
 <div class="container mx-auto mt-10">
   <h1 class="mb-10 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-    Find danmarks bedste <span class="underline underline-offset-3 decoration-8 decoration-0blue-400 dark:decoration-blue-600">legepladser</span>
+    Find danmarks bedste <span @*class="underline underline-offset-3 decoration-8 decoration-0blue-400 dark:decoration-blue-600"*@ style="background-image: linear-gradient(45deg,#CA4246 16.666%,#E16541 16.666%,#E16541 33.333%,#F18F43 33.333%,#F18F43 50%,#8B9862 50%,#8B9862 66.666%,#476098 66.666%,#476098 83.333%,#A7489B 83.333%);-webkit-background-clip: text;-webkit-text-fill-color: transparent; ">legepladser</span>
   </h1>
   
   <ul>
     @foreach(var playground in Model.Playgrounds) {
-      <li>Lon: @playground.Longitude, Lat: @playground.Latitude</li>
+      <li>Lon: @playground.Longitude, Lat: @playground.Latitude, Adresse: @playground.Address</li>
     }
   </ul>
 
